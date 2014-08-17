@@ -56,33 +56,40 @@
 
 	        	$select_options[$theme]= $theme_name ;
 	        }
-
+	        qa_set_display_rules($qa_content, array(
+	            self::USE_MINIFIED_CSS     => self::PLUGIN_ENABLED ,
+	            self::CODE_THEME     => self::PLUGIN_ENABLED ,
+	            self::ADVANCED_SELECTOR     => self::PLUGIN_ENABLED ,
+	            ));
 
 			$fields = array();
 
 			$fields[self::PLUGIN_ENABLED] = array(
 				'label' => qa_lang('ami_hljs/hljs_enable'),
-				'tags' => 'NAME="'.self::PLUGIN_ENABLED.'" ',
+				'tags'  => 'NAME="'.self::PLUGIN_ENABLED.'" id="'.self::PLUGIN_ENABLED.'"',
 				'value' => qa_opt(self::PLUGIN_ENABLED),
-				'type' => 'checkbox',
+				'type'  => 'checkbox',
 			);
 
 			$fields[self::USE_MINIFIED_CSS] = array(
+				'id'    => self::USE_MINIFIED_CSS ,
 				'label' => qa_lang('ami_hljs/use_minified_css'),
-				'tags' => 'NAME="'.self::USE_MINIFIED_CSS.'" ',
+				'tags'  => 'NAME="'.self::USE_MINIFIED_CSS.'" ',
 				'value' => qa_opt(self::USE_MINIFIED_CSS),
-				'type' => 'checkbox',
+				'type'  => 'checkbox',
 			);
 
 			$fields[self::CODE_THEME] = array(
-				'label' => qa_lang('ami_hljs/select_a_theme'),
-				'tags' => 'NAME="'.self::CODE_THEME.'" ',
-				'value' => ucwords(preg_replace('/[^a-zA-Z0-9]+/', ' ',(preg_replace("/\\.[^.\\s]{3}$/", "", qa_opt(self::CODE_THEME))))),
-				'type' => 'select',
+				'id'    => self::CODE_THEME ,
+				'label'   => qa_lang('ami_hljs/select_a_theme'),
+				'tags'    => 'NAME="'.self::CODE_THEME.'" ',
+				'value'   => ucwords(preg_replace('/[^a-zA-Z0-9]+/', ' ',(preg_replace("/\\.[^.\\s]{3}$/", "", qa_opt(self::CODE_THEME))))),
+				'type'    => 'select',
 				'options' => $select_options ,
 			);
 
 			$fields[self::ADVANCED_SELECTOR] = array(
+				'id'    => self::ADVANCED_SELECTOR ,
 				'label' => qa_lang('ami_hljs/advanced_selector'),
 				'tags' => 'NAME="'.self::ADVANCED_SELECTOR.'" ',
 				'value' => qa_opt(self::ADVANCED_SELECTOR),
