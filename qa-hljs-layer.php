@@ -12,7 +12,7 @@
 		
 		function head_css() {
 			qa_html_theme_base::head_css();
-			if ($this->template == 'question') {
+			if ($this->template == 'question' && qa_opt(qa_hljs_admin::PLUGIN_ENABLED)) {
 				$selected_theme  = qa_opt(qa_hljs_admin::CODE_THEME);
 		    	if (!$selected_theme ) {
 		    		$selected_theme  = "github.css" ;
@@ -31,7 +31,7 @@
 
 		function head_script()
 		{
-			if ($this->template == 'question') {
+			if ($this->template == 'question' && qa_opt(qa_hljs_admin::PLUGIN_ENABLED)) {
 			    $js_url = qa_opt('site_url').'qa-plugin/'.AMI_HLJS_DIR_NAME.'/assets/highlight.pack.js' ;
 				if (!isset($this->content['script']['hljs_script'])) {
 					$this->content['script']['hljs_script'] = '<script src="'.$js_url.'" type="text/javascript"></script>' ;
@@ -42,7 +42,7 @@
 		function body_script()
 		{
 			qa_html_theme_base::body_script();
-			if ($this->template == 'question') {
+			if ($this->template == 'question' && qa_opt(qa_hljs_admin::PLUGIN_ENABLED)) {
 				$this->output(
 					'<script type="text/javascript">',
 						'$(document).ready(function() {
