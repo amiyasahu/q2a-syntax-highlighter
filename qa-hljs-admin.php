@@ -14,7 +14,7 @@
 					return 1 ;
 						break;
 				case self::ADVANCED_SELECTOR:
-					return '' ; /*an empty sting initially*/
+					return '' ; /*an empty string initially*/
 						break;
 
 				case self::CODE_THEME:
