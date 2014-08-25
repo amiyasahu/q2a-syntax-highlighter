@@ -47,7 +47,7 @@
 					'<script type="text/javascript">',
 						'$(document).ready(function() {
 										hljs.configure({tabReplace: \'    \'});
-						  				$(\'pre code,pre,code\').each(function(i, e) {hljs.highlightBlock(e)});' 
+						  				//$(\'pre code\').each(function(i, e) {hljs.highlightBlock(e)});' 
 				);
 				$advanced_selector = qa_opt(qa_hljs_admin::ADVANCED_SELECTOR);
 				if (!empty($advanced_selector)) {
