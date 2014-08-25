@@ -18,8 +18,7 @@
 		    		$selected_theme  = "github.css" ;
 		    	}
 		    	$suffix = "/" ;
-		    	$minify_opt  = qa_opt(qa_hljs_admin::USE_MINIFIED_CSS);
-		    	if (!!$minify_opt) {
+		    	if (!!qa_opt(qa_hljs_admin::USE_MINIFIED_CSS)) {
 		    		$suffix = ".min/" ;
 		    	}
 		    	$root_theme_url = qa_opt('site_url').'qa-plugin/'.AMI_HLJS_DIR_NAME.'/assets/styles'.$suffix ;
